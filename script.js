@@ -32,12 +32,12 @@ function playRound(playerSelection, computerSelection) {
                 break;
  
              case "rock":
-                 return "You Win! Paper beats Rock!"
-                 break;
+                return "You Win! Paper beats Rock!"
+                break;
              
              case "scissors":
-                 return "You Lose! Scissors beats Paper!"
-                 break;
+                return "You Lose! Scissors beats Paper!"
+                break;
         }
     } else if (playerSelection.toLowerCase() == "scissors") {
         switch (computerSelection) {
@@ -46,14 +46,16 @@ function playRound(playerSelection, computerSelection) {
                 break;
  
              case "paper":
-                 return "You Win! Scissors beats Paper!"
-                 break;
+                return "You Win! Scissors beats Paper!"
+                break;
              
              case "rock":
-                 return "You Lose! Rock beats Scissors!"
-                 break;
+                return "You Lose! Rock beats Scissors!"
+                break;
         }
     }
-    
+}
+
+function game() {
 
 }
