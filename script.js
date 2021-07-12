@@ -59,32 +59,28 @@ function playRound(playerSelection, computerSelection) {
 let playerScore = 0;
 let computerScore = 0;
 
-function game() {
-    while (playerScore != 5 && computerScore != 5) { 
-        let player = prompt('Rock, Paper or Scissors?', '');
-        let computer = computerPlay();
-        let result = playRound(player, computer);
-        console.log(result);
+function game() { 
+    let player = prompt('Rock, Paper or Scissors?', '');
+    let computer = computerPlay();
+    let result = playRound(player, computer);
+    console.log(result);
 
-        switch (true) {
-            case (result.includes("Win")):
-                ++playerScore;
-                console.log("Your Score is " + playerScore);
-                console.log("The Computer's Score is " + computerScore);
-                break;
+    switch (true) {
+        case (result.includes("Win")):
+            ++playerScore;
+            console.log("Your Score is " + playerScore);
+            console.log("The Computer's Score is " + computerScore);
+            break;
 
-            case (result.includes("Lose")):
-                ++computerScore;
-                console.log("Your Score is " + playerScore);
-                console.log("The Computer's Score is " + computerScore);
-                break;
+        case (result.includes("Lose")):
+            ++computerScore;
+            console.log("Your Score is " + playerScore);
+            console.log("The Computer's Score is " + computerScore);
+            break;
 
-            case (result.includes("tie")):
-                console.log("Your Score is " + playerScore);
-                console.log("The Computer's Score is " + computerScore);
-                break;
-        } 
+        case (result.includes("tie")):
+            console.log("Your Score is " + playerScore);
+            console.log("The Computer's Score is " + computerScore);
+            break;
     } 
-
-    return "Game Over!"
 }
