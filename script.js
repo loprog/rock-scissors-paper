@@ -14,17 +14,14 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() === "rock") {
        switch (computerSelection) {
             case "rock":
-                console.log("Hello");
                 return "It's a tie!";
                 break;
 
             case "paper":
-                console.log("Hello");    
                 return "You Win! Rock beats Paper!"
                 break;
             
             case "scissors":
-                console.log("Hello");
                 return "You Lose! Scissors beats Rock!"
                 break;
        }
@@ -45,7 +42,7 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection.toLowerCase() === "scissors") {
         switch (computerSelection) {
             case "scissors":
-                return "It's a tie!";
+                return "It's a tie";
                 break;
  
             case "paper":
@@ -89,5 +86,11 @@ function game() {
     return "End of Round"
 }
 
-const rock = document.querySelector('#rock');
-rock.addEventListener('click', playRound('rock', computerPlay))
+let rock = document.querySelector('#rock');
+rock.addEventListener('click', () => playRound('rock', computerPlay()));
+
+let scissors = document.querySelector('#scissors')
+scissors.addEventListener('click', () => playRound('scissors', computerPlay()));
+
+let paper = document.querySelector('#paper')
+paper.addEventListener('click', () => playRound('paper', computerPlay()));
