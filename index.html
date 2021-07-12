@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Scissors Paper Game</title>
     <style>
-        body {
-            overflow-y: hidden;
-        }
-        
         h1 {
             font-family: 'Helvetica', 'sans-serif';
             margin: 12px 0 0 0;
+        }
+
+        p {
+            font-family: 'Helvetica', 'sans-serif';
         }
 
         .container {
             display: grid;
             height: 100vh;
             grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
             align-items: center;
         }
 
@@ -44,6 +44,26 @@
             background-color: #eee;
         }
 
+        #scoreboard {
+            grid-row: 1/1;
+            grid-column: 2/3;
+        }
+
+        #rock {
+            grid-row: 2/3;
+            grid-column: 1/2; 
+        }
+
+        #scissors {
+            grid-row: 2/3;
+            grid-column: 2/3;
+        }
+
+        #paper {
+            grid-row: 2/3;
+            grid-column: 3/4;
+        }
+
         @media screen and (max-width:792px) {
             .container {
                 display: grid;
@@ -57,6 +77,11 @@
 </head>
 <body>
     <div class="container">
+        <div id="scoreboard">
+            <p id="playerScore"> Your Score is 0 </p>
+            <p id="computerScore"> Computer Score is 0 </p>
+        </div>
+
         <div id="rock" class="selection">
             <svg id="Layer_1" height="48" viewBox="0 0 512 512" width="48" xmlns="http://www.w3.org/2000/svg">
             <path d="m404.18 102.99 32.3 154.53-85.3-46.66z" fill="#616d77"/>

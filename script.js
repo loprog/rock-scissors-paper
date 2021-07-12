@@ -9,9 +9,21 @@ function computerPlay() {
         return "scissors";
     }
 }
+
 let outcome;
 let playerScore = 0;
 let computerScore = 0;
+let playerScoreText;
+let computerScoreText;
+
+let rock = document.querySelector('#rock');
+rock.addEventListener('click', () => playRound('rock', computerPlay()));
+
+let scissors = document.querySelector('#scissors')
+scissors.addEventListener('click', () => playRound('scissors', computerPlay()));
+
+let paper = document.querySelector('#paper')
+paper.addEventListener('click', () => playRound('paper', computerPlay()));
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() === "rock") {
@@ -58,22 +70,27 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 
+
     if (outcome.includes('Win')) {
         ++playerScore;
     } else if (outcome.includes('Lose')) {
         ++computerScore;
     }
 
-    console.log(outcome);
-    console.log(`Your score is ${playerScore}`);
-    console.log(`The computer score is ${computerScore}`);
+    playerScoreText = document.querySelector('#playerScore');
+    playerScoreText.textContent = `Your Score is ${playerScore}`;
+
+    computerScoreText = document.querySelector('#computerScore');
+    computerScoreText.textContent = `Computer Score is ${computerScore}`;
+
+
+    if (playerScore == 5) {
+        const winner = document.createElement('p');
+        winner.textContent = 'You are the Winner!';
+        computerScoreText.appendChild(winner);
+    } else if (computerScore == 5) {
+        const winner = document.createElement('p');
+        winner.textContent = 'Computer is the Winner!';
+        computerScoreText.appendChild(winner);
+    }
 }
-
-let rock = document.querySelector('#rock');
-rock.addEventListener('click', () => playRound('rock', computerPlay()));
-
-let scissors = document.querySelector('#scissors')
-scissors.addEventListener('click', () => playRound('scissors', computerPlay()));
-
-let paper = document.querySelector('#paper')
-paper.addEventListener('click', () => playRound('paper', computerPlay()));
