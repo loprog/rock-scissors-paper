@@ -83,4 +83,5 @@ function game() {
             console.log("The Computer's Score is " + computerScore);
             break;
     } 
+    return "End of Round"
 }
