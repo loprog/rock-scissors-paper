@@ -13,15 +13,18 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() === "rock") {
        switch (computerSelection) {
-           case "rock":
-               return "It's a tie!";
-               break;
+            case "rock":
+                console.log("Hello");
+                return "It's a tie!";
+                break;
 
             case "paper":
+                console.log("Hello");    
                 return "You Win! Rock beats Paper!"
                 break;
             
             case "scissors":
+                console.log("Hello");
                 return "You Lose! Scissors beats Rock!"
                 break;
        }
@@ -85,3 +88,6 @@ function game() {
     } 
     return "End of Round"
 }
+
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', playRound('rock', computerPlay))
