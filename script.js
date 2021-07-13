@@ -26,6 +26,9 @@ let paper = document.querySelector('#paper')
 paper.addEventListener('click', () => playRound('paper', computerPlay()));
 
 function playRound(playerSelection, computerSelection) {
+    if (playerScore >= 5 || computerScore >= 5) {
+        return;
+    }
     if (playerSelection.toLowerCase() === "rock") {
        switch (computerSelection) {
             case "rock":
